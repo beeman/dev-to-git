@@ -11,7 +11,7 @@ import {
   Repository,
   UpdateStatus,
 } from './dev-to-git.interface';
-import { formatArticlePublishedStatuses, logBuilder, Logger } from './helpers';
+import { formatArticlePublishedStatuses, logBuilder, Logger, sleep } from './helpers';
 
 export const DEFAULT_CONFIG_PATH: string = './dev-to-git.json';
 
@@ -109,7 +109,8 @@ export class DevToGit {
     const articles = this.readConfigFile();
 
     return Promise.all(
-      articles.map(articleConf => {
+      articles.map(async articleConf => {
+        await sleep();
         const article = new Article(articleConf, this.configuration.devToToken);
         return article.publishArticle();
       }),

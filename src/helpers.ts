@@ -57,3 +57,4 @@ export const logBuilder = (options: ConfigurationOptions): Logger => (...message
     console.log(...messages);
   }
 };
+export const sleep = (ms = 1000) => new Promise(resolve => setTimeout(resolve, ms));
