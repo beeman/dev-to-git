@@ -105,16 +105,20 @@ export class DevToGit {
     }));
   }
 
-  public publishArticles(): Promise<ArticlePublishedStatus[]> {
+  public async publishArticles(): Promise<ArticlePublishedStatus[]> {
     const articles = this.readConfigFile();
 
-    return Promise.all(
-      articles.map(async articleConf => {
-        await sleep();
+    return new Promise<ArticlePublishedStatus[]>(async resolve => {
+      const result: ArticlePublishedStatus[] = [];
+      for (const articleConf of articles) {
+        console.log('Sleeping one second');
+        await sleep(1000);
         const article = new Article(articleConf, this.configuration.devToToken);
-        return article.publishArticle();
-      }),
-    );
+        const res = await article.publishArticle();
+        result.push(res);
+      }
+      return resolve(result);
+    });
   }
 }
 
