@@ -1,5 +1,5 @@
 {
-  "name": "dev-to-git",
+  "name": "@beeman/dev-to-git",
   "version": "0.0.0-development",
   "description": "",
   "keywords": [],
@@ -15,7 +15,7 @@
   "author": "Maxime Robert <maxime.robert1992@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxime1992/dev-to-git.git"
+    "url": "https://github.com/beeman/dev-to-git.git"
   },
   "license": "MIT",
   "engines": {
