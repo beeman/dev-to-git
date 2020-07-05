@@ -111,8 +111,8 @@ export class DevToGit {
     return new Promise<ArticlePublishedStatus[]>(async resolve => {
       const result: ArticlePublishedStatus[] = [];
       for (const articleConf of articles) {
-        console.log('Sleeping one second');
-        await sleep(1000);
+        // console.log('Sleeping one second');
+        // await sleep(1000);
         const article = new Article(articleConf, this.configuration.devToToken);
         const res = await article.publishArticle();
         result.push(res);
