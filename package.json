@@ -1,6 +1,6 @@
 {
   "name": "@beeman/dev-to-git",
-  "version": "0.0.0-development",
+  "version": "1.6.0",
   "description": "",
   "keywords": [],
   "main": "bin/dev-to-git.umd.js",
